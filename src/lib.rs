@@ -46,7 +46,7 @@ where
 mod context {
     use std::rc::Rc;
 
-    use anymap::AnyMap;
+    use anymap2::AnyMap;
     use yewdux::{mrc::Mrc, Context};
 
     use crate::MiddlewareDispatch;

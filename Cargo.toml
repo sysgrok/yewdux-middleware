@@ -1,6 +1,6 @@
 [package]
 name = "yewdux-middleware"
-version = "0.3.0"
+version = "0.4.0"
 edition = "2021"
 categories = ["yewdux", "yew", "ui"]
 keywords = ["yewdux", "yew", "ui"]
@@ -11,6 +11,6 @@ readme = "README.md"
 #forced-target = "wasm32-unknown-unknown"
 
 [dependencies]
-yewdux = { version = "0.10", default-features = false }
-yew = { version = "0.21", default-features = false }
-anymap = "1.0.0-beta.2"
+yewdux = { version = "0.11.0", default-features = false }
+yew = { version = "0.22.0", default-features = false }
+anymap2 = "0.13.0"
