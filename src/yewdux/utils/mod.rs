@@ -1,5 +1,5 @@
-use std::{marker::PhantomData, rc::Rc};
 use crate::yewdux::{prelude::*, Context};
+use std::{marker::PhantomData, rc::Rc};
 
 #[derive(Default)]
 pub struct HistoryListener<T: Store + PartialEq>(PhantomData<T>);

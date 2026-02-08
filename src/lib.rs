@@ -48,8 +48,8 @@ where
 mod context {
     use std::rc::Rc;
 
-    use anymap2::AnyMap;
     use crate::yewdux::{mrc::Mrc, Context};
+    use anymap2::AnyMap;
 
     use crate::MiddlewareDispatch;
 

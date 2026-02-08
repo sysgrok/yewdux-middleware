@@ -29,7 +29,7 @@ pub(crate) fn derive(input: DeriveInput) -> TokenStream {
             }
         })
         .collect();
-        
+
     let derived_from_init: Vec<_> = opts
         .derived_from
         .iter()
@@ -39,7 +39,7 @@ pub(crate) fn derive(input: DeriveInput) -> TokenStream {
             }
         })
         .collect();
-        
+
     let derived_from_mut_init: Vec<_> = opts
         .derived_from_mut
         .iter()

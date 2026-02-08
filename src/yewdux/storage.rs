@@ -163,8 +163,8 @@ pub fn init_tab_sync<S: Store + DeserializeOwned>(
 }
 
 mod tests {
-    use std::rc::Rc;
     use crate::yewdux::*;
+    use std::rc::Rc;
 
     use serde::Deserialize;
 

@@ -9,7 +9,8 @@ use crate::yewdux::{dispatch::Dispatch, store::Store, Context};
 fn use_cx() -> Context {
     #[cfg(target_arch = "wasm32")]
     {
-        use_context::<crate::yewdux::context::Context>().unwrap_or_else(crate::yewdux::context::Context::global)
+        use_context::<crate::yewdux::context::Context>()
+            .unwrap_or_else(crate::yewdux::context::Context::global)
     }
     #[cfg(not(target_arch = "wasm32"))]
     {
@@ -18,7 +19,7 @@ fn use_cx() -> Context {
 }
 
 #[hook]
-pub fn use_dispatch<S>() -> Dispatch<S> 
+pub fn use_dispatch<S>() -> Dispatch<S>
 where
     S: Store,
 {
@@ -51,7 +52,7 @@ where
 /// }
 /// ```
 #[hook]
-pub fn use_store<S>() -> (Rc<S>, Dispatch<S>) 
+pub fn use_store<S>() -> (Rc<S>, Dispatch<S>)
 where
     S: Store,
 {
@@ -67,7 +68,7 @@ where
 
 /// Simliar to ['use_store'], but only provides the state.
 #[hook]
-pub fn use_store_value<S>() -> Rc<S> 
+pub fn use_store_value<S>() -> Rc<S>
 where
     S: Store,
 {

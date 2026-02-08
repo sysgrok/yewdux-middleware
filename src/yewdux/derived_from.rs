@@ -102,7 +102,7 @@ where
 ///
 /// // Create a context - in a real application, you'd typically get this from a parent component
 /// let cx = Context::new();
-/// 
+///
 /// // Set up the derived relationship
 /// derive_from::<SourceStore, DerivedStore>(&cx);
 ///
@@ -213,7 +213,7 @@ where
 ///
 /// // Create a context - in a real application, you'd typically get this from a parent component
 /// let cx = Context::new();
-/// 
+///
 /// // Set up the derived relationship with mutable updates
 /// derive_from_mut::<SourceStore, DerivedStore>(&cx);
 ///
@@ -239,9 +239,9 @@ where
 }
 
 mod tests {
-    use std::rc::Rc;
-    use crate::yewdux::Dispatch;
     use crate::yewdux::derived_from::{derive_from, derive_from_mut};
+    use crate::yewdux::Dispatch;
+    use std::rc::Rc;
 
     use crate::yewdux::*;
 

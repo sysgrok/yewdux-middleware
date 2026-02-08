@@ -124,8 +124,8 @@ mod tests {
 
     use crate::yewdux::{dispatch::Dispatch, store::Store, Context};
 
-    use crate::yewdux::*;
     use super::Mrc;
+    use crate::yewdux::*;
 
     #[derive(Clone, PartialEq)]
     struct TestState(Mrc<u32>);

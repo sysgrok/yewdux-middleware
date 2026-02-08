@@ -1,10 +1,10 @@
 use std::{rc::Rc, str::FromStr};
 
+use crate::yewdux::{prelude::*, Context};
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::JsCast;
 use web_sys::{HtmlInputElement, HtmlTextAreaElement};
 use yew::prelude::*;
-use crate::yewdux::{prelude::*, Context};
 
 pub enum InputElement {
     Input(HtmlInputElement),

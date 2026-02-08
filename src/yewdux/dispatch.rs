@@ -152,9 +152,9 @@ impl<S: Store> Dispatch<S> {
 
     /// Create a dispatch that subscribes to changes in state. Latest state is sent immediately,
     /// and on every subsequent change. Automatically unsubscribes when this dispatch is dropped.
-    /// 
+    ///
     /// ## Higher-Order Component Pattern with YewduxRoot
-    /// 
+    ///
     /// ```
     /// use std::rc::Rc;
     ///
