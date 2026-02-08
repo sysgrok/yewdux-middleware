@@ -617,8 +617,8 @@ impl<S: Store> PartialEq for Dispatch<S> {
     }
 }
 
-#[cfg(test)]
 mod tests {
+    use std::rc::Rc;
 
     use crate::yewdux::{mrc::Mrc, subscriber::Subscribers};
 

@@ -102,14 +102,15 @@ impl<S: 'static> Callable<S> for Callback<Rc<S>> {
     }
 }
 
-#[cfg(test)]
 mod tests {
+    use std::rc::Rc;
 
     use crate::yewdux::*;
 
     use crate::yewdux::context::Context;
     use crate::yewdux::dispatch::Dispatch;
     use crate::yewdux::mrc::Mrc;
+    use crate::yewdux::subscriber::Subscribers;
 
     #[derive(Clone, PartialEq, Eq)]
     struct TestState(u32);

@@ -119,12 +119,13 @@ impl<T> PartialEq for Mrc<T> {
     }
 }
 
-#[cfg(test)]
 mod tests {
+    use std::rc::Rc;
 
     use crate::yewdux::{dispatch::Dispatch, store::Store, Context};
 
     use crate::yewdux::*;
+    use super::Mrc;
 
     #[derive(Clone, PartialEq)]
     struct TestState(Mrc<u32>);

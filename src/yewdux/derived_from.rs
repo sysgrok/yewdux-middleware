@@ -238,9 +238,10 @@ where
     );
 }
 
-#[cfg(test)]
 mod tests {
+    use std::rc::Rc;
     use crate::yewdux::Dispatch;
+    use crate::yewdux::derived_from::{derive_from, derive_from_mut};
 
     use crate::yewdux::*;
 
@@ -248,8 +249,8 @@ mod tests {
     fn can_derive_from() {
         #[derive(Clone, PartialEq, Eq)]
         struct TestState(u32);
-        impl crate::Store for TestState {
-            fn new(_cx: &crate::Context) -> Self {
+        impl crate::yewdux::Store for TestState {
+            fn new(_cx: &crate::yewdux::Context) -> Self {
                 Self(0)
             }
 
@@ -260,8 +261,8 @@ mod tests {
 
         #[derive(Clone, PartialEq, Eq)]
         struct TestDerived(u32);
-        impl crate::Store for TestDerived {
-            fn new(_cx: &crate::Context) -> Self {
+        impl crate::yewdux::Store for TestDerived {
+            fn new(_cx: &crate::yewdux::Context) -> Self {
                 Self(0)
             }
 
@@ -276,7 +277,7 @@ mod tests {
             }
         }
 
-        let cx = crate::Context::new();
+        let cx = crate::yewdux::Context::new();
         derive_from::<TestState, TestDerived>(&cx);
 
         let dispatch_derived = Dispatch::<TestDerived>::new(&cx);
@@ -290,8 +291,8 @@ mod tests {
     fn can_derive_from_mut() {
         #[derive(Clone, PartialEq, Eq)]
         struct TestState(u32);
-        impl crate::Store for TestState {
-            fn new(_cx: &crate::Context) -> Self {
+        impl crate::yewdux::Store for TestState {
+            fn new(_cx: &crate::yewdux::Context) -> Self {
                 Self(0)
             }
 
@@ -302,8 +303,8 @@ mod tests {
 
         #[derive(Clone, PartialEq, Eq)]
         struct TestDerived(u32);
-        impl crate::Store for TestDerived {
-            fn new(_cx: &crate::Context) -> Self {
+        impl crate::yewdux::Store for TestDerived {
+            fn new(_cx: &crate::yewdux::Context) -> Self {
                 Self(0)
             }
 
@@ -318,7 +319,7 @@ mod tests {
             }
         }
 
-        let cx = crate::Context::new();
+        let cx = crate::yewdux::Context::new();
         derive_from_mut::<TestState, TestDerived>(&cx);
 
         let dispatch_derived = Dispatch::<TestDerived>::new(&cx);
