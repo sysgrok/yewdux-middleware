@@ -16,6 +16,7 @@ readme = "README.md"
 [features]
 default = ["future"]
 future = []
+doctests = []
 
 [dependencies]
 yew = { version = "0.22.0", default-features = false }

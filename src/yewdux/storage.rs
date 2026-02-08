@@ -88,7 +88,7 @@ where
 
     fn on_change(&self, _cx: &Context, state: Rc<Self::Store>) {
         if let Err(err) = save(state.as_ref(), self.area) {
-            crate::log::error!("Error saving state to storage: {:?}", err);
+            crate::yewdux::log::error!("Error saving state to storage: {:?}", err);
         }
     }
 }
@@ -147,7 +147,7 @@ pub fn init_tab_sync<S: Store + DeserializeOwned>(
             Dispatch::<S>::new(&cx).set(state);
         }
         Err(e) => {
-            crate::log::error!("Unable to load state: {:?}", e);
+            crate::yewdux::log::error!("Unable to load state: {:?}", e);
         }
         _ => {}
     }) as Box<dyn FnMut(&Event)>);
@@ -162,6 +162,7 @@ pub fn init_tab_sync<S: Store + DeserializeOwned>(
     Ok(())
 }
 
+#[cfg(test)]
 mod tests {
     use crate::yewdux::*;
     use std::rc::Rc;

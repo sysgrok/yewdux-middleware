@@ -238,6 +238,7 @@ where
     );
 }
 
+#[cfg(test)]
 mod tests {
     use crate::yewdux::derived_from::{derive_from, derive_from_mut};
     use crate::yewdux::Dispatch;

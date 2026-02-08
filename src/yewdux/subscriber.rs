@@ -102,6 +102,7 @@ impl<S: 'static> Callable<S> for Callback<Rc<S>> {
     }
 }
 
+#[cfg(test)]
 mod tests {
     use std::rc::Rc;
 

@@ -36,6 +36,8 @@ pub fn init_listener<L: Listener, F: FnOnce() -> L>(new_listener: F, cx: &Contex
     });
 }
 
+#[cfg(test)]
+#[allow(dead_code)]
 mod tests {
     use std::rc::Rc;
 

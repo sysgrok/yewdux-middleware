@@ -119,6 +119,7 @@ impl<T> PartialEq for Mrc<T> {
     }
 }
 
+#[cfg(test)]
 mod tests {
     use std::rc::Rc;
 
