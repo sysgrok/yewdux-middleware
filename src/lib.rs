@@ -1,5 +1,7 @@
 use std::rc::Rc;
 
+pub mod yewdux;
+
 pub use yewdux::prelude::{Reducer, Store};
 
 pub use self::context::*;
@@ -47,7 +49,7 @@ mod context {
     use std::rc::Rc;
 
     use anymap2::AnyMap;
-    use yewdux::{mrc::Mrc, Context};
+    use crate::yewdux::{mrc::Mrc, Context};
 
     use crate::MiddlewareDispatch;
 
@@ -87,8 +89,8 @@ mod context {
 
         pub fn store<M, S>(&self, msg: M)
         where
-            M: yewdux::prelude::Reducer<S>,
-            S: yewdux::prelude::Store,
+            M: crate::yewdux::prelude::Reducer<S>,
+            S: crate::yewdux::prelude::Store,
         {
             self.context.reduce(move |state| msg.apply(state));
         }
