@@ -1,7 +1,7 @@
 //! Unique state shared application-wide
 use std::rc::Rc;
 
-pub use yewdux_macros::Store;
+pub use yewdux_middleware_macros::Store;
 
 use crate::yewdux::Context;
 

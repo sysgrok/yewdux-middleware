@@ -1,5 +1,5 @@
 [workspace]
-members = [".", "yewdux-macros"]
+members = [".", "yewdux-middleware-macros"]
 
 [package]
 name = "yewdux-middleware"
@@ -22,7 +22,7 @@ yew = { version = "0.22.0", default-features = false }
 anymap2 = "0.13.0"
 
 # === yewdux embedded dependencies (can be removed if switching back to external yewdux) ===
-yewdux-macros = { path = "./yewdux-macros" }
+yewdux-middleware-macros = { path = "./yewdux-middleware-macros" }
 log = "0.4.16"
 serde = { version = "1.0.114", features = ["rc"] }
 serde_json = "1.0.64"

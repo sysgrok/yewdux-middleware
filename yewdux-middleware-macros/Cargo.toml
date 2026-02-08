@@ -1,5 +1,5 @@
 [package]
-name = "yewdux-macros"
+name = "yewdux-middleware-macros"
 version = "0.11.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"

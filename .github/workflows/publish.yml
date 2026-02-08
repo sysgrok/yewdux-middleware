@@ -24,7 +24,9 @@ jobs:
         run: rustup target add wasm32-unknown-unknown
       - name: Login
         run: cargo login ${{ secrets.crates_io_token }}
-      - name: Build | Publish
+      - name: Build | Publish macros crate
+        run: cargo publish -p yewdux-middleware-macros
+      - name: Build | Publish main crate
         run: cargo publish --target wasm32-unknown-unknown
       - name: Get the crate version from cargo
         run: |

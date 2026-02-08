@@ -21,5 +21,7 @@ jobs:
         run: rustup default ${{ env.rust_toolchain }}
       - name: Add wasm target
         run: rustup target add wasm32-unknown-unknown
-      - name: Build | Publish Dry Run
+      - name: Build | Publish Dry Run macros
+        run: cargo publish --dry-run -p yewdux-middleware-macros
+      - name: Build | Publish Dry Run main crate
         run: cargo publish --dry-run --target wasm32-unknown-unknown
