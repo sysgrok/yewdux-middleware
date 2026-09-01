@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+* Breaking change: upgrade to `yewdux 0.13` and `yew 0.23`
+* Replace the `anymap2` dependency with a small, in-crate type map, mirroring what `yewdux` itself now does upstream
+* Remove the stale `feature = "doctests"` arm from the cfg gate on `MiddlewareContext::global`
+
 ## [0.4.0] - 2026-02-07
 
 * Migrate to anymap2 (and upgrade to yewdux 0.11 and yew 0.22), which is broken due to this [issue](https://github.com/rust-lang/rust/issues/51443)

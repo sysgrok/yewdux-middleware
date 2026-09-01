@@ -43,11 +43,41 @@ where
     }
 }
 
+mod anymap {
+    use std::{
+        any::{Any, TypeId},
+        collections::HashMap,
+    };
+
+    /// A minimal type-keyed map, holding at most one value per type.
+    #[derive(Default)]
+    pub struct AnyMap {
+        map: HashMap<TypeId, Box<dyn Any>>,
+    }
+
+    impl AnyMap {
+        pub fn new() -> Self {
+            Default::default()
+        }
+
+        pub fn get<T: 'static>(&self) -> Option<&T> {
+            self.map
+                .get(&TypeId::of::<T>())
+                .map(|value| value.downcast_ref().expect("type id mismatch"))
+        }
+
+        pub fn insert<T: 'static>(&mut self, value: T) {
+            self.map.insert(TypeId::of::<T>(), Box::new(value));
+        }
+    }
+}
+
 mod context {
     use std::rc::Rc;
 
-    use anymap2::AnyMap;
     use yewdux::{mrc::Mrc, Context};
+
+    use crate::anymap::AnyMap;
 
     use crate::MiddlewareDispatch;
 
@@ -58,7 +88,7 @@ mod context {
     }
 
     impl MiddlewareContext {
-        #[cfg(any(doc, feature = "doctests", target_arch = "wasm32"))]
+        #[cfg(any(doc, target_arch = "wasm32"))]
         pub fn global() -> Self {
             thread_local! {
                 static CONTEXT: MiddlewareContext = MiddlewareContext {
